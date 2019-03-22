@@ -1,0 +1,100 @@
+<!--#4 bootstrap 1 code-->
+<h1>My Goals</h1>
+
+<!-- Start of form component-->
+<div class="container">
+    <div class="row">
+        <app-goal-form (addGoal)="addNewGoal($event)"></app-goal-form>
+
+<!-- End of form component-->
+<ul>
+    <div *ngFor="let goal of goals;let i = 'index'">
+
+        <h4 id="{{i}}" appStrikethrough>{{goal.name}} due on {{goal.completeDate|date|uppercase}}</h4>
+        <button class="btn btn-primary" (click)='toogleDetails(i)'>Toogle Details</button>
+        
+        <app-goal-details *ngIf="goal.showDescription" [goal]='goal' (isComplete)= 'deleteGoal($event,i)'></app-goal-details>
+      </div>
+</ul>
+
+<p *ngIf='goals.length > 5'>You have too many goals</p>
+
+</div>
+</div>
+
+
+
+
+<!-- end of code 4 bootstrap>
+
+
+<!--
+#3 check bootrap screenshot folder for working version3 of code before adding bootstrap above
+---------------------------------------------------------------
+The code below adds the completion date functionality from pipes tuesday-->
+<!--
+<h1>My Goals</h1>
+<ul>
+    <div *ngFor='let goal of goals;let i = index'>
+        <li  id="{{i}}" appStrikethrough>{{goal.name}} due on {{goal.completeDate|date|uppercase}}</li>
+
+<!--below adds button-->
+<!--
+        <button  (click)='toogleDetails(i)'>Toogle Details</button>
+
+<!--below adds description.
+When we get to Wednesday deleteing goals we change it from complete to delete as we have done to others
+
+        <app-goal-details *ngIf="goal.showDescription" [goal]='goal' (isComplete)= 'completeGoal($event,i)'></app-goal-details>
+
+    </div>
+
+See the new code below  -->
+
+<!-- goal details start --
+
+  <app-goal-details *ngIf="goal.showDescription" [goal]='goal' (isComplete)= 'deleteGoal($event,i)'></app-goal-details>
+ </div>
+
+</ul>
+<p *ngIf='goals.length > 5'>You have too many goals</p>
+
+<!-- goal details end -->
+
+<!--end f code version 3 -->
+
+
+<!--#2
+---------------------------------------------------------------
+The code below is for STRIKETHROUGH
+
+<h1>My Goals</h1>
+<ul>
+    <div *ngFor='let goal of goals;let i = index'>
+        <li appStrikethrough>{{goal.name}}</li>
+        <button  (click)='toogleDetails(i)'>Toogle Details</button>
+
+    <app-goal-details *ngIf="goal.showDescription" [goal]='goal' (isComplete)= 'completeGoal($event,i)'></app-goal-details>
+
+    </div>
+</ul>
+<p *ngIf='goals.length > 5'>You have too many goals</p>
+-->
+
+
+
+<!--
+#1 Code before strikethrough functionlity was added
+---------------------------------------------------------------
+<h1>My Goals</h1>
+<ul>
+    <div *ngFor='let goal of goals;let i = index'>
+        <li >{{goal.name}}</li>
+        <button  (click)='toogleDetails(i)'>Toogle Details</button>
+
+        <app-goal-details *ngIf="goal.showDescription" [goal]='goal' (isComplete)= 'completeGoal($event,i)'></app-goal-details>
+    </div>
+
+</ul>
+<p *ngIf='goals.length > 5'>You have too many goals</p>
+-->

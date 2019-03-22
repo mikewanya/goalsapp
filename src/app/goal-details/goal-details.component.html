@@ -1,0 +1,31 @@
+<!--#3 start of code version3
+------------------------------------------------- -->
+<p>{{goal.description}}</p>
+<p>complete in {{goal.completeDate|dateCount}} days</p>
+<button class="btn btn-danger" (click) = 'goalDelete(true)'> Delete Goal </button>
+<!-- end of code version 3 for boostratp topic
+------------------------------------------------- -->
+
+
+
+<!--#2 code version 2
+----------------------------------------------------------
+<p>{{goal.description}}</p>
+
+<!--Added to show time left for goal- Tuesday custom pipes -->
+<!--
+<p>This goal will be completed in {{goal.completeDate|dateCount}} days</p>
+
+<button (click) = 'goalDelete(true)'> Delete Goal </button>
+
+<!-- end of code version 2
+---------------------------------------------------------->
+
+
+<!--
+----------------------------------------------
+We replace goalComplete with goal Delete
+
+<button (click) = 'goalComplete(true)'> Delete </button>
+---------------------------------------------
+-->

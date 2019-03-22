@@ -1,0 +1,121 @@
+<!--#4 for form validation starts here
+------------------------------------------------------------
+-->
+
+<div class="container-fluid">
+    <div class="row">
+        <form (ngSubmit)='submitGoal()' #goalForm='ngForm'>
+            <!-- Name Form -->
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text"  class="form-control" id="name" [(ngModel)]="newGoal.name" name="name" #name="ngModel" required>
+
+                <div [hidden]="name.valid || name.pristine" class="alert alert-danger">
+                    <p> Name is Required</p>
+
+                </div>
+            </div>
+            <!-- Description Input -->
+            <div class="form-group">
+                <label for="description">Description</label>
+                <textarea class="form-control" id="description" rows="4" [(ngModel)]="newGoal.description" name="description" #description="ngModel" required></textarea>
+                <div [hidden]="description.valid || description.pristine" class="alert alert-danger">
+                    <p> Description is Required</p>
+
+                </div>
+
+            </div>
+            <!-- Date Input -->
+            <div class="form-group">
+                <label for="complete">Completion</label>
+                <input type='date' id="complete" [(ngModel)]="newGoal.completeDate" name="completeDate" #completeDate="ngModel" required >
+                <div [hidden]="completeDate.valid || completeDate.pristine" class="alert alert-danger">
+                    <p> Complete Date is Required</p>
+
+                </div>
+            </div>
+            <button type="Submit" class="btn btn-success btn-lg">Add Goal</button>
+
+        </form>
+
+      </div>
+  </div>
+
+<!--#4 for form form validation starts here
+------------------------------------------------------------
+-->
+
+
+<!--#3 for form ng model starts here
+------------------------------------------------------------
+-->
+<!--
+<div class="container-fluid">
+    <div class="row">
+        <form #goalForm='ngForm'>
+            <div class="form-group">
+
+                <label for="name">Name</label>
+                <input type="text" required class="form-control" id="name" [(ngModel)]="newGoal.name" name="name">
+            <!--Testing  to see if we get data-->
+              <!--this line was spoling <code></code>  Display {{newGoal.name}}-->
+<!--
+            </div>
+            <div class="form-group">
+
+                <label for="description">Description</label>
+                <textarea class="form-control" id="description" rows="4" required></textarea>
+
+            </div>
+            <div class="form-group">
+                <label for="complete">Completion</label>
+                <input type='date' id="complete" required>
+
+            </div>
+            <button type="submit" class="btn btn-success btn-lg">Add Goal</button>
+        </form>
+    </div>
+</div>
+
+<!--#3 for form ng model ends here
+---------------------------------------------------------
+-->
+
+
+<!--#2 for bootstrap starts here
+--------------------------------------------------
+<div class="container-fluid">
+    <div class="row">
+        <form>
+            <div class="form-group">
+
+                <label for="name">Name</label>
+                <input type="text" required class="form-control" id="name">
+
+            </div>
+            <div class="form-group">
+
+                <label for="description">Description</label>
+                <textarea class="form-control" id="description" rows="4" required></textarea>
+
+            </div>
+            <div class="form-group">
+                <label for="complete">Completion</label>
+                <input type='date' id="complete" required>
+
+            </div>
+        </form>
+    </div>
+</div>
+<!--#2 for bootstrap ends here
+-------------------------------------------------------------
+-->
+
+
+
+<!-- #1 original code once component is generated
+<p>
+  goal-form works!
+</p>
+
+-->
